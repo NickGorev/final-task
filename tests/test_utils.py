@@ -4,6 +4,7 @@ from utils import bake, delivery, pickup
 
 
 def test_bake(capsys):
+    """тест функции приготовления пиццы"""
     with patch("utils.randint") as mocked_randint:
         mocked_randint.return_value = 1
         bake(Margherita())
@@ -13,6 +14,7 @@ def test_bake(capsys):
 
 
 def test_delivery(capsys):
+    """тест функции доставки"""
     with patch("utils.randint") as mocked_randint:
         mocked_randint.return_value = 2
         delivery(Pepperoni("L"))
@@ -22,6 +24,7 @@ def test_delivery(capsys):
 
 
 def test_pickup(capsys):
+    """тест фукнции самовывоза"""
     with patch("utils.randint") as mocked_randint:
         mocked_randint.return_value = 5
         pickup(Hawaiian("XL"))
