@@ -56,7 +56,7 @@ class Margherita(Pizza):
 
 
 class Pepperoni(Pizza):
-    """пицца пепперони"""
+    """пицца пеперони"""
 
     ingredients = ["tomato sauce", "mozzarella", "pepperoni"]
     emoji = "🍕"
