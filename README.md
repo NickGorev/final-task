@@ -49,7 +49,7 @@ $ python -m pytest -v tests/
 $ python -m pytest -v tests/ --cov --cov-report html
 ```
 ## Необходимые пакеты
-Для работы программы необходимы пакет `click`.
+Для работы программы необходим пакет `click`.
 
 Устанавливается командой
 ```console
