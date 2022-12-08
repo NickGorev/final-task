@@ -3,6 +3,7 @@ from pizza import Pizza, Margherita, Pepperoni, Hawaiian
 
 
 def test_pizza():
+    """тестируем базовый класс пиццы без указания размера"""
     generic_pizza = Pizza()
     pizza_dict = generic_pizza.dict()
     exp_dict = {"name": "Pizza", "emoji": "", "ingredients": [], "size": "L"}
@@ -10,6 +11,7 @@ def test_pizza():
 
 
 def test_pizza_xl():
+    """тестируем базовый класс пиццы с указанием размера"""
     generic_pizza = Pizza("XL")
     pizza_dict = generic_pizza.dict()
     exp_dict = {"name": "Pizza", "emoji": "", "ingredients": [], "size": "XL"}
@@ -17,6 +19,7 @@ def test_pizza_xl():
 
 
 def test_pizza_wring_size():
+    """тестируем базовый класс пиццы с неправильным указанием размера"""
     with pytest.raises(ValueError) as err:
         Pizza("XXL")
 
@@ -25,6 +28,7 @@ def test_pizza_wring_size():
 
 
 def test_margherita():
+    """тестируем пиццу маргарита"""
     pizza = Margherita()
     pizza_dict = pizza.dict()
     exp_dict = {
@@ -38,6 +42,7 @@ def test_margherita():
 
 
 def test_pepperoni():
+    """тестируем пиццу с колбасой пеперони"""
     pizza = Pepperoni("L")
     pizza_dict = pizza.dict()
     exp_dict = {
@@ -51,6 +56,7 @@ def test_pepperoni():
 
 
 def test_hawaiian():
+    """тестируем гавайскую пиццу с ананасом"""
     pizza = Hawaiian("XL")
     pizza_dict = pizza.dict()
     exp_dict = {
@@ -89,4 +95,5 @@ def test_hawaiian():
     ],
 )
 def test_pizza_eq(first_pizza, second_pizza, result):
+    """тестируем стравнение пицц по размеру и составу"""
     assert (first_pizza == second_pizza) == result
