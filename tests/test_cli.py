@@ -5,6 +5,7 @@ from cli import menu, order
 
 
 def test_menu():
+    """тестирование вывода меню и интерфейса командной строки"""
     true_result = (
         "- Margherita 🧀: tomato sauce, mozzarella, tomatoes\n"
         + "- Pepperoni 🍕: tomato sauce, mozzarella, pepperoni\n"
@@ -26,6 +27,7 @@ def test_menu():
     ],
 )
 def test_order(pizza_name, options, answer):
+    """Тестирование успешных заказов"""
     bake_answer = "👨‍🍳Приготовили за 1с!\n"
     with patch("utils.randint") as mocked_randint:
         mocked_randint.return_value = 1
@@ -45,6 +47,7 @@ def test_order(pizza_name, options, answer):
     ],
 )
 def test_order_wrtong_params(pizza_name, options):
+    """тестирование неуспешных заказов"""
     with patch("utils.randint") as mocked_randint:
         mocked_randint.return_value = 1
         runner = CliRunner()
