@@ -35,12 +35,7 @@ $ python cli.py order margherita --delivery
 🛵 Доставили за 78с!
 ```
 ```console
-$ python cli.py order margherita --delivery
-👨‍🍳Приготовили за 62с!
-🛵 Доставили за 78с!
-```
-```console
-python cli.py order hawaiian --delivery --size XL
+$ python cli.py order hawaiian --delivery --size XL
 👨‍🍳Приготовили за 73с!
 🛵 Доставили за 85с!
 ```
@@ -52,4 +47,18 @@ $ python -m pytest -v tests/
 Либо, если требуется отчёт в формате HTML:
 ```console
 $ python -m pytest -v tests/ --cov --cov-report html
+```
+## Необходимые пакеты
+Для работы программы необходимы пакет `click`.
+
+Устанавливается командой
+```console
+$ pip install click
+```
+Для тестирования необходимы пакеты `pytest` и `pytest-cov`.
+
+Устанавливаются командами
+```console
+$ pip install -U pytest
+$ pip install -U pytest-cov
 ```
