@@ -92,6 +92,8 @@ def test_hawaiian():
         (Hawaiian(), Pepperoni(), False),
         (Hawaiian(), 123, False),
         (Hawaiian(), "Hawaiian", False),
+        (Pizza(), Margherita(), False),
+        (Margherita(), Pizza(), False),
     ],
 )
 def test_pizza_eq(first_pizza, second_pizza, result):
