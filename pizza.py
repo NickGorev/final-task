@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 
 
 class Pizza:
@@ -8,7 +8,7 @@ class Pizza:
     ingredients: List[str] = []
     emoji = ""
 
-    def __init__(self, size: str = "L"):
+    def __init__(self, size: Optional[str] = "L"):
         if size is None:
             size = "L"
         size = size.upper()
